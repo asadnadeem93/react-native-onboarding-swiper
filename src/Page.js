@@ -19,7 +19,10 @@ const Page = ({
   if (typeof title === 'string' || title instanceof String) {
     titleElement = (
       <View style={styles.padding}>
-        <Text allowFontScaling={allowFontScaling} style={[styles.title, isLight ? styles.titleLight : {}, titleStyles]}>
+        <Text
+          allowFontScaling={allowFontScaling}
+          style={[styles.title, isLight ? styles.titleLight : {}, titleStyles]}
+        >
           {title}
         </Text>
       </View>
@@ -30,7 +33,14 @@ const Page = ({
   if (typeof subtitle === 'string' || subtitle instanceof String) {
     subtitleElement = (
       <View style={styles.padding}>
-        <Text allowFontScaling={allowFontScaling} style={[styles.subtitle, isLight ? styles.subtitleLight : {}, subTitleStyles]}>
+        <Text
+          allowFontScaling={allowFontScaling}
+          style={[
+            styles.subtitle,
+            isLight ? styles.subtitleLight : {},
+            subTitleStyles,
+          ]}
+        >
           {subtitle}
         </Text>
       </View>
@@ -38,10 +48,10 @@ const Page = ({
   }
 
   return (
-    <View style={[styles.container, containerStyles, { width, height }]}>
-      <View style={[styles.imageContainer, imageContainerStyles]}>{image}</View>
+    <View style={[styles.container, containerStyles, { width }]}>
       {titleElement}
       {subtitleElement}
+      <View style={[styles.imageContainer, imageContainerStyles]}>{image}</View>
     </View>
   );
 };
@@ -78,12 +88,11 @@ const styles = {
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: potrait ? 'center' : 'flex-start',
-    paddingTop: potrait ? 0 : 10,
   },
   imageContainer: {
-    flex: 0,
-    paddingBottom: potrait ? 60 : 10,
+    flex: 1,
     alignItems: 'center',
+    justifyContent: 'center',
     width: '100%',
   },
   padding: {
