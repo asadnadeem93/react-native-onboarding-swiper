@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 const Dot = ({ isLight, selected }) => {
   let backgroundColor;
   if (isLight) {
-    backgroundColor = selected ? 'rgba(0, 0, 0, 0.8)' : 'rgba(0, 0, 0, 0.3)';
+    backgroundColor = selected ? '#5C85FB' : '#E1E7FA';
   } else {
     backgroundColor = selected ? '#fff' : 'rgba(255, 255, 255, 0.5)';
   }
